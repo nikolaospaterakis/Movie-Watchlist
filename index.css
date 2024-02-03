@@ -233,7 +233,7 @@ section a {
     padding: 0.5em;
     position: absolute;
     z-index: 2;
-    top: 3%;
+    top: 2vh;
     right: 4%;
     width: 20%;
     max-width: 120px;
