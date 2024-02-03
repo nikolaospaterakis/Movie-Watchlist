@@ -77,7 +77,7 @@ header a {
 
 nav {
     position: absolute;
-    top: 32%;
+    top: 18vh;
     left: 8%;
     z-index: 1;
     display: flex;
