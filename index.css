@@ -1,11 +1,14 @@
 * {
     margin: 0;
-    overflow: hidden;
 }
 
 body {
     font-family: 'Inter', sans-serif;
 }
+
+body, html {
+    overflow-x: hidden;
+    }
 
 /*Global*/
 
