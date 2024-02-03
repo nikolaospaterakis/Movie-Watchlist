@@ -44,9 +44,7 @@ bodyEl.addEventListener("click", function(e){
 function searchTitle(searchItem){
     mainEl.innerHTML = " "
     const itemToSearch = searchItem.replace(" ", "+")
-    //console.log(itemToSearch)
-    //searchEl.value = ""
-    fetch(`http://www.omdbapi.com/?apikey=4315cfe3&s=${itemToSearch}`)
+    fetch(`https://www.omdbapi.com/?apikey=4315cfe3&s=${itemToSearch}`)
         .then(res => res.json())
         .then(data => {
             if(data.totalResults > 0){
@@ -67,10 +65,9 @@ function searchTitle(searchItem){
 
 function moreInfo(ID){
     let runTime = ""
-    fetch(`http://www.omdbapi.com/?apikey=4315cfe3&i=${ID}`)
+    fetch(`https://www.omdbapi.com/?apikey=4315cfe3&i=${ID}`)
         .then(res => res.json())
         .then(data => {
-            //console.log(data)
             if(data.Runtime === "N/A"){
                 runtime = "?"
             } else {
@@ -112,14 +109,13 @@ function checkWatchList(key){
     let exists = false
     let listToSave = []
     let loopingArray
-    fetch(`http://www.omdbapi.com/?apikey=4315cfe3&i=${key}`)
+    fetch(`https://www.omdbapi.com/?apikey=4315cfe3&i=${key}`)
     .then(res => res.json())
     .then(data => {
         if(!localStorage.getItem('watchlist')){
             listToSave.push(data)
             localStorage.setItem('watchlist', JSON.stringify(listToSave))
         } else {
-            //console.log(Object.keys(JSON.parse(localStorage.getItem('watchlist'))))
             if(Object.keys(JSON.parse(localStorage.getItem('watchlist'))).length === 1){
                 for(let item of JSON.parse(localStorage.getItem('watchlist'))){
                     if(item.imdbID === data.imdbID){
@@ -154,7 +150,7 @@ function clear(){
 
 function deleteMovie(key){
     let listToSave = []
-    fetch(`http://www.omdbapi.com/?apikey=4315cfe3&i=${key}`)
+    fetch(`https://www.omdbapi.com/?apikey=4315cfe3&i=${key}`)
         .then(res => res.json())
         .then(data => {
                 for(let item of JSON.parse(localStorage.getItem('watchlist'))){
