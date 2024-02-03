@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/*Global*/
+
+.hidden {
+    display: none;
+}
+
+/*Hover*/
+
+header a:hover {
+    color: #e0afa0;
+    cursor: pointer;
+}
+
+#h3-add:hover {
+    color: #463f3a;
+    cursor: pointer;
+}
+
+nav input:hover,
+nav button:hover {
+    border: 1px solid #463f3a;
+    color: #463f3a;
+}
+
+/*Header*/
+
+.module::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 20vh;
+    background-image: url('/images/wallMovies.avif');
+    filter: brightness(35%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -8em;
+}
+
+.module-inside {
+    position: relative;
+    text-shadow: 0 0 10px black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    transform: translateY(30%);
+    animation: glow 3s infinite;
+}
+
+
+header h1 {
+    font-size: 2.3rem;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.7em;
+    animation: glow 3s infinite;
+}
+
+/*SearchBar*/
+
+nav {
+    position: absolute;
+    top: 18%;
+    left: 8%;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+}
+
+nav input {
+    padding: 0.6em;
+    width: 60%;
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid lightgray;
+    font-family: 'Inter', sans-serif;
+}
+
+nav input:focus{
+    outline: none;
+}
+
+nav button {
+    font-family: 'Inter', sans-serif;
+    width: 100px;
+    background-color: #D1D5DB;
+    color: black;
+    border: 1px solid lightgray;
+    border-radius: 0px 8px 8px 0px;
+}
+
+/*Main*/
+
+main {
+    margin-top: 7em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    color: #DFDDDD;
+}
+
+#sec-res {
+    margin-top: 20em;
+}
+
+section i {
+    font-size: 4em;
+}
+
+section h3 {
+    font-size: 1.1em;
+}
+
+section a {
+    text-decoration: none;
+}
+
+#h3-add {
+    color: #e0afa0;
+    font-size: 1em;
+    margin-top: 0.6em;
+}
+
+#h3-add i {
+    font-size: 0.9em;
+}
+
+.movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 1.5em 0;
+    margin: 0;
+}
+
+.movie-bg {
+    padding: 1em;
+}
+
+.movie-bg:hover {
+    opacity: 0.9;
+}
+
+.movie:hover {
+    border-bottom: 1px solid #463f3a;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 550px;
+}
+
+.movie img {
+    width: 150px;
+}
+
+.movie-title-rate,
+.movie-min-genre {
+    display: flex;
+}
+
+.movie-title-rate {
+    gap: 0.8em;
+}
+
+.movie-title-rate {
+    flex-direction: column;
+}
+
+.movie-min-genre {
+    gap: 0.7em;
+    font-size: 0.85em;
+}
+
+.movie-min-genre h4{
+    font-weight: 500;
+}
+
+.movie-details p {
+    font-weight: 500;
+    color: grey;
+}
+
+.fa-star {
+    color: #FEC654;
+}
+
+.movie-rate {
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.fa-circle-plus:hover,
+.fa-circle-minus:hover {
+    color: #e0afa0;
+}
+
+.fa-circle-plus,
+.fa-circle-minus {
+    font-size: 1.2em;
+}
+
+#missing {
+    margin-top: 12em;
+}
+
+#btn-mode {
+    padding: 0.5em;
+    position: absolute;
+    z-index: 2;
+    top: 3%;
+    right: 4%;
+    width: 20%;
+    max-width: 120px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#btn-mode:hover {
+    animation: movingBorder 4s infinite;
+    color: #463f3a
+}
+
+#btn-mode div {
+    font-size: 0.8em;
+}
+
+#mode-drk {
+    display: none;
+}
+
+@keyframes movingBorder {
+    0% {border-top: 1px solid #463f3a;}
+    25% {border-right: 1px solid #463f3a;}
+    50% {border-bottom: 1px solid #463f3a;}
+    75% {border-left: 1px solid #463f3a;}
+    100% {border-top: 1px solid #463f3a}
+}
+
+@keyframes glow {
+    0% {text-shadow: 0 0 10px black;}
+    50% {text-shadow: 0 0 10px pink;}
+    100% {text-shadow: 0 0 10px black;}
+}
+
+@media (min-width:628px){
+    #btn-mode {
+        right: 2%;
+    }
+
+    nav {
+        left: 12%;
+    }
+
+    .module::before {
+        background-position-y: -15em;
+    }
+}
+
+@media (min-width: 900px){
+    .module::before {
+        background-position-y: -20em;
+    }
+}
+
+@media (min-width:1280px) {
+    .module::before {
+        background-position-y: -36em;
+    }
+
+    nav {
+        left: 16%;
+    }
+
+    #btn-mode {
+        right: 1%;
+    }
+}
